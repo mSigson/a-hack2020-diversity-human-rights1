@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 export default function Index() {
   return (
     <div>
-      <p>Hello Next.js</p>
+      <h1>Welcome to ...</h1>
+      <Link href={`/dashboard`}>Login</Link>
+      <Link href={`/onboarding`}>Sign Up</Link>
     </div>
   );
 }
