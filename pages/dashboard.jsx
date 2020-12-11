@@ -28,7 +28,7 @@ const Dashboard = ({ user }) => {
             ? `Welcome back ${user.name}`
             : `Hi ${user.name}! Welcome to Convoy!`}
         </h1>
-        <Button>Find a Mentor</Button>
+        {userData && <Button>Find a Mentor</Button>}
       </div>
 
       {userData && (
@@ -47,44 +47,66 @@ const Dashboard = ({ user }) => {
             We have a couple questions for you.
           </h2>
           <div className="onboarding-form">
-            <Input label="First Name:" />
-            <Input label="Last Name:" />
-            <Input label="What's your age?" type="select">
-              <option value="0-10">0 - 10</option>
-              <option value="10-15">10 - 15</option>
-              <option value="15-20">15 - 20</option>
-              <option value="20-25">20 - 25</option>
-              <option value="25-30">25 - 30</option>
-              <option value="30-35">30 - 35</option>
-              <option value="35-40">35 - 40</option>
-              <option value="40-45">40 - 45</option>
-              <option value="45-50">45 - 50</option>
-              <option value="50-55">50 - 55</option>
-              <option value="60-65">60 - 65</option>
-            </Input>
-            <Input
-              label="What's your years of experience in technology?"
-              type="select"
-            >
-              <option value="0-1">0 - 2 </option>
-              <option value="2-5">2 - 5 </option>
-              <option value="5-10">5 - 10 </option>
-              <option value="10+">10+</option>
-            </Input>
-            <label style={{ fontWeight: "bold", marginBottom: "6px" }}>
-              Are you Open to work?
-            </label>
-            <Input label="Yes" type="radio" />
-            <Input label="No" type="radio" />
-            <Input label="What is your preferred language?" type="select">
-              <option value="english">English</option>
-              <option value="french">French</option>
-              <option value="spanish">Spanish</option>
-              <option value="chinese">Chinese</option>
-              <option value="punjabi">Punjabi</option>
-            </Input>
-            <Input label="Email" />
-            <Button onClick={() => setUserData(true)}>Submit</Button>
+            <div className="input">
+              <Input label="First Name:" />
+            </div>
+            <div className="input">
+              <Input label="Last Name:" />
+            </div>
+            <div className="input">
+              <Input label="What's your age?" type="select">
+                <option value="0-10">0 - 10</option>
+                <option value="10-15">10 - 15</option>
+                <option value="15-20">15 - 20</option>
+                <option value="20-25">20 - 25</option>
+                <option value="25-30">25 - 30</option>
+                <option value="30-35">30 - 35</option>
+                <option value="35-40">35 - 40</option>
+                <option value="40-45">40 - 45</option>
+                <option value="45-50">45 - 50</option>
+                <option value="50-55">50 - 55</option>
+                <option value="60-65">60 - 65</option>
+              </Input>
+            </div>
+            <div className="input">
+              <Input
+                label="What's your years of experience in technology?"
+                type="select"
+              >
+                <option value="0-1">0 - 2 </option>
+                <option value="2-5">2 - 5 </option>
+                <option value="5-10">5 - 10 </option>
+                <option value="10+">10+</option>
+              </Input>
+            </div>
+            <div className="input">
+              <div style={{ marginBottom: "12px" }}>
+                <label style={{ fontWeight: "bold", marginBottom: "6px" }}>
+                  Are you Open to work?
+                </label>
+              </div>
+              <div style={{ display: "flex" }}>
+                <div style={{ marginRight: "20px" }}>
+                  <Input label="Yes" type="radio" />
+                </div>
+                <Input label="No" type="radio" />
+              </div>
+            </div>
+            <div className="input">
+              <Input label="What is your preferred language?" type="select">
+                <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="spanish">Spanish</option>
+                <option value="chinese">Chinese</option>
+                <option value="punjabi">Punjabi</option>
+              </Input>
+            </div>
+            <div className="input">
+              <Input label="Email" />
+            </div>
+            <div className="input">
+              <Button onClick={() => setUserData(true)}>Submit</Button>
+            </div>
           </div>
         </>
       )}
