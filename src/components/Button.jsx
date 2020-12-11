@@ -5,7 +5,11 @@ import Link from "next/link";
 const Button = ({ children, color = "#0F6DAB", href, onClick }) => {
   return (
     <>
-      {href ? (
+      {href && href.split("")[0] === "h" ? (
+        <a href={href} style={{ textDecoration: "none" }}>
+          <div className="button">{children}</div>
+        </a>
+      ) : href ? (
         <Link href={href}>
           <div className="button">{children}</div>
         </Link>
