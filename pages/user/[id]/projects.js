@@ -13,7 +13,7 @@ const onSubmit = (selectedRepo, formValues) => {
 };
 
 const Projects = ({ user }) => {
-  const [repositories, setRepositories] = useState();
+  const [repositories, setRepositories] = useState([]);
   const [selectedRepo, setSelectedRepo] = useState();
   const [formValues, setFormValues] = useState({});
   const [slideInDrawerIsOpen, setSlideInDrawerIsOpen] = useState(false);
@@ -21,7 +21,7 @@ const Projects = ({ user }) => {
   useEffect(() => {
     async function getRepositories() {
       const res = await fetch(
-        `https://api.github.com/users/${user.name}/repos`
+        `https://api.github.com/users/${user.nickname}/repos`
       );
       const data = await res.json();
       setRepositories(data);
@@ -31,7 +31,7 @@ const Projects = ({ user }) => {
 
   return (
     <div>
-      {repositories && (
+      {repositories ? (
         <>
           <h1>Your Projects</h1>
           <div className="projects-list">
@@ -47,6 +47,8 @@ const Projects = ({ user }) => {
             ))}
           </div>
         </>
+      ) : (
+        <h2>You don't have any public repositories you've created</h2>
       )}
       {slideInDrawerIsOpen && (
         <SlideInDrawer close={() => setSlideInDrawerIsOpen(false)}>

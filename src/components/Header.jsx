@@ -8,7 +8,7 @@ const Header = ({ user }) => {
       {user && (
         <nav>
           <Link href={`/dashboard`}>Dashboard</Link>
-          <Link href={`/user/${user.name}/projects`}>My Projects</Link>
+          <Link href={`/user/${user.nickname}/projects`}>My Projects</Link>
           <Link href={`/review-requests`}>Requesting Review</Link>
         </nav>
       )}

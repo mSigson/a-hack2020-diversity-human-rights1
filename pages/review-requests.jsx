@@ -8,9 +8,13 @@ const ReviewRequests = () => {
     <div>
       <h1>Requests Seeking Review</h1>
       <div className="requests-container">
-        {reviewRequests.map((request) => (
-          <ReviewRequest request={request} key={request.id} />
-        ))}
+        {reviewRequests.length > 0 ? (
+          reviewRequests.map((request) => (
+            <ReviewRequest request={request} key={request.id} />
+          ))
+        ) : (
+          <h2>There are no requests for review at this time</h2>
+        )}
       </div>
       <style jsx>{`
         .requests-container {

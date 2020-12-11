@@ -13,6 +13,7 @@ export const fetchUser = async () => {
 
   const res = await fetch("/api/auth/me");
   const user = await res.json();
+
   userState = user;
   return user;
 };
