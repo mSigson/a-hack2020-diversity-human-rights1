@@ -16,6 +16,9 @@ const Layout = ({ user, children }) => {
           padding: 24px;
           padding-top: 100px;
           background: #e6effb;
+          max-height: 100vh;
+          height: 100vh;
+          overflow-y: auto;
         }
       `}</style>
     </div>

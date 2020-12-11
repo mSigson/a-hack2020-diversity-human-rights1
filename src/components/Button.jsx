@@ -2,7 +2,7 @@ import React from "react";
 import lightenDarkenColor from "../utils/lightenDarkenColor";
 import Link from "next/link";
 
-const Button = ({ children, color = "#7acbd7", href, onClick }) => {
+const Button = ({ children, color = "#0F6DAB", href, onClick }) => {
   return (
     <>
       {href ? (

@@ -9,7 +9,7 @@ const Header = ({ user }) => {
         <nav>
           <Link href={`/dashboard`}>Dashboard</Link>
           <Link href={`/user/${user.name}/projects`}>My Projects</Link>
-          <Link href={`/onboarding`}>Requesting Review</Link>
+          <Link href={`/review-requests`}>Requesting Review</Link>
         </nav>
       )}
 
@@ -23,7 +23,7 @@ const Header = ({ user }) => {
           position: fixed;
           width: 100%;
 
-          background: #7acbd7;
+          background: #0f6dab;
         }
 
         .title {

@@ -9,8 +9,10 @@ export default function Index() {
         <Button href={`/api/login`}>Let's go!</Button>
       </div>
       <style jsx global>{`
+        h1 {
+          margin-bottom: 30px;
+        }
         .welcome {
-          border: 1px solid #aaaaaa;
           width: 50%;
           margin: 30px auto;
         }

@@ -1,23 +1,24 @@
 import React from "react";
 import Button from "./Button";
 
-const Repository = ({ repo, seekReview }) => {
+const ReviewRequest = ({ request }) => {
   return (
-    <div className="repo">
-      <div className="repo-info">
-        <p className="repo-title">{repo.name}</p>
-        {repo.language}
+    <>
+      <div className="request" key={request.id}>
+        <div className="request-info">
+          <p className="request-title">{request.requestName}</p>
+          <p className="request-owner">{request.owner.login}</p>
+          <p className="request-language">{request.language}</p>
+          <p className="request-description">{request.requestDesc}</p>
+        </div>
+        <div className="request-cta">
+          <Button href={request.html_url}>Review</Button>
+        </div>
       </div>
-      <div className="repo-cta">
-        <Button href={repo.html_url} color="#7acbd7">
-          Go to Repo
-        </Button>
-        <Button onClick={seekReview}>Seek a Review</Button>
-      </div>
+
       <style jsx>{`
-        .repo {
+        .request {
           display: flex;
-          align-items: center;
           justify-content: space-between;
           width: calc(50% - 10px);
           padding: 24px;
@@ -26,7 +27,7 @@ const Repository = ({ repo, seekReview }) => {
           border: 1px solid #aaaaaa;
         }
 
-        .repo-info {
+        .request-info {
           font-size: 16px;
           min-width: 50%;
           max-width: 50%;
@@ -35,43 +36,41 @@ const Repository = ({ repo, seekReview }) => {
           text-overflow: ellipsis;
         }
 
-        .repo-title {
+        .request-title {
           font-weight: bold;
         }
 
-        .repo-cta {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 250px;
+        .request-language,
+        .request-owner {
+          margin-bottom: 12px;
         }
 
         @media (max-width: 960px) {
-          .repo {
+          .request {
             width: 100%;
             flex-direction: column;
           }
 
-          .repo-info,
-          .repo-cta {
+          .request-info,
+          .request-cta {
             width: 100%;
             min-width: 100%;
             max-width: 100%;
           }
 
-          .repo-cta {
+          .request-cta {
             justify-content: initial;
             align-items: initial;
             margin: 12px 0 0;
           }
 
-          .repo-cta .button {
+          .request-cta .button {
             margin-right: 12px;
           }
         }
       `}</style>
-    </div>
+    </>
   );
 };
 
-export default Repository;
+export default ReviewRequest;
